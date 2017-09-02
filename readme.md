@@ -30,5 +30,11 @@ Installation
 ``` bash
 git clone git@github.com:sparkythehuman/dotfiles.git ~/dotfiles
 cd ~/dotfiles
+chmod +x setup.sh
 ./setup.sh
+source ~/.zshrc
+source ~/.vimrc
 ```
+
+## TODO
+* Figure out a workaround for `oh-my-zsh/custom` dir
