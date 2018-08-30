@@ -111,6 +111,8 @@ DEFAULT_USER="joshuagarcia"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zschconfig="mivm ~/dotfiles/zshrc"
+alias gsync="git pull && git push"
 
 ## Copied from my .bash_profile
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
