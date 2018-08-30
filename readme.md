@@ -38,3 +38,4 @@ source ~/.vimrc
 
 ## TODO
 * Figure out a workaround for `oh-my-zsh/custom` dir
+* Run `brew install trash` on setup as well
