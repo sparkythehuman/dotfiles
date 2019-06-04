@@ -113,6 +113,12 @@ DEFAULT_USER="joshuagarcia"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias zschconfig="mivm ~/dotfiles/zshrc"
 alias gsync="git pull && git push"
+alias 'git undo add'="git reset"
+alias 'git undo commit'="git reset --soft HEAD~1"
+alias gaundo="git reset"
+alias gcundo="git reset --soft HEAD~1"
+alias rm='echo "rm is disabled, use remove or trash or /bin/rm instead."'
+alias remove='/bin/rm -irv'
 
 ## Copied from my .bash_profile
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
@@ -143,14 +149,6 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
-### For checkup and choices local dev
-PYTHONPATH="${PYTHONPATH}:/Users/joshuagarcia/11Online/Current/CheckupAndChoices/cuac-api/:/Users/joshuagarcia/11Online/Current/CheckupAndChoices/cuac-lib/"
-export PYTHONPATH
-
-### For ss-update-tool
-PYTHONPATH="$PYTHONPATH:/usr/local/lib/python2.7/site-packages"
-export PYTHONPATH
-
 ## Include composer
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 
@@ -158,13 +156,14 @@ export PATH="$PATH:$HOME/.composer/vendor/bin"
 ssh-add -A &> /dev/null
 export PATH="/usr/local/sbin:$PATH"
 
-## Load virtualenv
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Devel
-source /usr/local/bin/virtualenvwrapper.sh
+## Set PHP 7.2 as my default version
+export PATH="/usr/local/opt/php@7.2/bin:$PATH"
+export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
 
+#PYTHONPATH
+export PATH="/Users/joshuagarcia/Library/Python/2.7/bin:$PATH"
 
-###
+##
 # TIPS & TRICKS
 ###
 # `$ spectrum_ls` for a list of support zsh colors
@@ -175,3 +174,4 @@ source /usr/local/bin/virtualenvwrapper.sh
 # `$ cd -` or `$ -` or `$ 1` cd to last working directory
 # `$ tab` make a tab in the current working directory
 # `$ take` create a new directory and change to it
+# `$ trash` moves a file to trash using http://hasseg.org/trash/

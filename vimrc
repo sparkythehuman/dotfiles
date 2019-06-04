@@ -8,7 +8,7 @@ so ~/.vim/plugins.vim                                   " Load the plugins
 
 "----------- Config --------------"
 set backspace=indent,eol,start                          " Backspace config to work with indentation, end of line and start of line
-set tabstop=4 shiftwidth=4 expandtab                    " No tabs in the source file and all  tab characters are 4 space characters
+set tabstop=4 shiftwidth=4 expandtab                    " No tabs in the source file and all tab characters are 4 space characters
 set pastetoggle=<F4>                                    " Toggle paste
 set showcmd                                             " Show the commands I run
 let mapleader = ','                                     " The default is \, but comma is easier
@@ -17,6 +17,9 @@ set directory^=$HOME/.vim/tmp//                         " Put my swap (.swp) fil
 if has('gui_running' || 'gui_macvim')
     macmenu File.Print key=<nop>
 endif
+set rtp+=/usr/local/opt/fzf                             " required to use fzf, indicates that fzf is installed via Homebrew
+set diffopt+=iwhite                                     " ignore whitespace changes in diff mode
+set diffexpr=""                                         " ignore whitespace changes in diff mode
 
 
 
@@ -48,7 +51,6 @@ set showtabline=2                                       " Always show tab bar
 
 
 
-
 "------------- Search --------------"
 set hlsearch                                            " Highlight all matched terms.
 set incsearch                                           " Incrementally highlight, as we type.
@@ -56,7 +58,7 @@ set incsearch                                           " Incrementally highligh
 
 
 
-"-------------Split Management--------------"
+"------------- Split Management --------------"
 set splitbelow                                          " Make splits default to below...
 set splitright                                          " And to the right. This feels more natural.
 
@@ -69,7 +71,7 @@ nmap <C-L> <C-W><C-L>
 
 
 
-"-------------Mappings--------------"
+"------------- Mappings --------------"
 "
 "Make it easy to edit the Vimrc file.
 nmap <Leader>ev :tabedit $MYVIMRC<cr>
@@ -88,12 +90,21 @@ nmap <Leader>cd :cd %:p:h<cr>:pwd<cr>
 nmap <Leader><F7> mzgg=G`z
 
 "Remove unwanted trailing spaces -- http://vim.wikia.com/wiki/Remove_unwanted_spaces
-nmap <Leader><F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
+nmap <Leader><F6> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <cr>
+
+"Normall this is <F5> but that's currently used to startup Xdebug, so I had to remap
+nmap <F3> :CtrlPClearCache<cr>
+
+"See if the file uses tabs or spaces with <F2>
+nnoremap <F2> :<C-U>setlocal lcs=tab:>-,trail:-,eol:$ list! list? <CR>
+
+"To convert spaces to tabs run this then :%retab!
+nmap <Leader>ft :set tabstop=4 noexpandtab <CR>
 
 
 
 
-"-------------Plugins--------------"
+"------------- Plugins --------------"
 "/
 "/ Nerdtree
 "/
@@ -111,7 +122,8 @@ nmap <D-e> :CtrlPMRUFiles<cr>
 
 
 
-"-------------Auto-Commands--------------"
+
+"------------- Auto-Commands --------------"
 
 "Automatically source the Vimrc file on save.
 
@@ -134,6 +146,32 @@ function! QuickfixFilenames()
   endfor
   return join(map(values(buffer_numbers), 'fnameescape(v:val)'))
 endfunction
+
+
+
+
+"------------- Language Specific Settings --------------"
+"/
+"/ JavaScript
+"/
+" set 2 tabs to two spaces in JS files
+autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 expandtab 
+
+"/
+"/ CSS
+"/
+autocmd BufNewFile,BufRead *.sass set filetype=sass
+" set 2 tabs to two spaces in sass files
+autocmd FileType sass setlocal tabstop=2 shiftwidth=2 expandtab 
+
+
+
+
+"------------- Project Specific Settings --------------"
+autocmd BufRead,BufNewFile /Users/joshuagarcia/Work/Current/BookKeeper/bookkeeper-extension/* setlocal tabstop=4 shiftwidth=4 expandtab 
+
+
+
 
 "-------------Tips and Reminders--------------"
 " - Press 'zz' to instantly center the line where the cursor is located.
