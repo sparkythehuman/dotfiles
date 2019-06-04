@@ -111,7 +111,7 @@ DEFAULT_USER="joshuagarcia"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias zschconfig="mivm ~/dotfiles/zshrc"
+alias zschconfig="mvim ~/dotfiles/zshrc"
 alias gsync="git pull && git push"
 alias 'git undo add'="git reset"
 alias 'git undo commit'="git reset --soft HEAD~1"
@@ -119,6 +119,7 @@ alias gaundo="git reset"
 alias gcundo="git reset --soft HEAD~1"
 alias rm='echo "rm is disabled, use remove or trash or /bin/rm instead."'
 alias remove='/bin/rm -irv'
+alias unzip='echo "use extract instead, it is better."'
 
 ## Copied from my .bash_profile
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
@@ -155,13 +156,6 @@ export PATH="$PATH:$HOME/.composer/vendor/bin"
 ## Autoload all the keys in the keychain
 ssh-add -A &> /dev/null
 export PATH="/usr/local/sbin:$PATH"
-
-## Set PHP 7.2 as my default version
-export PATH="/usr/local/opt/php@7.2/bin:$PATH"
-export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
-
-#PYTHONPATH
-export PATH="/Users/joshuagarcia/Library/Python/2.7/bin:$PATH"
 
 ##
 # TIPS & TRICKS
