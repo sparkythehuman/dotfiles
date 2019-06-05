@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/joshuagarcia/.oh-my-zsh
+export ZSH=/Users/joshuatgarcia/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -52,10 +52,8 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git npm brew osx extract z zsh-autosuggestions)
-
-# Syntax Highlighting plugin
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# zsh-syntax-highlighting must be the last plugin sourced
+plugins=(git npm brew osx extract z zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -85,7 +83,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=244'
 
 # By default the promt will show "user@hostname"
 # Set DEFAULT_USER to regular username to hide the "user@hostname"
-DEFAULT_USER="joshuagarcia"
+DEFAULT_USER="joshuatgarcia"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -107,48 +105,17 @@ DEFAULT_USER="joshuagarcia"
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 alias zschconfig="mvim ~/dotfiles/zshrc"
 alias gsync="git pull && git push"
-alias 'git undo add'="git reset"
-alias 'git undo commit'="git reset --soft HEAD~1"
 alias gaundo="git reset"
 alias gcundo="git reset --soft HEAD~1"
 alias rm='echo "rm is disabled, use remove or trash or /bin/rm instead."'
 alias remove='/bin/rm -irv'
 alias unzip='echo "use extract instead, it is better."'
 
-## Copied from my .bash_profile
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-## Load nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
-autoload -U add-zsh-hook
-load-nvmrc() {
-    local node_version="$(nvm version)"
-    local nvmrc_path="$(nvm_find_nvmrc)"
-
-    if [ -n "$nvmrc_path" ]; then
-        local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-        if [ "$nvmrc_node_version" = "N/A" ]; then
-            nvm install
-        elif [ "$nvmrc_node_version" != "$node_version" ]; then
-            nvm use
-        fi
-    elif [ "$node_version" != "$(nvm version default)" ]; then
-        echo "Reverting to nvm default version"
-        nvm use default
-    fi
-}
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
 
 ## Include composer
 export PATH="$PATH:$HOME/.composer/vendor/bin"
