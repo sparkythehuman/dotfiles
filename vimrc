@@ -79,9 +79,6 @@ nmap <Leader>ev :tabedit $MYVIMRC<cr>
 "Add simple highlight removal.
 nmap <Leader><space> :nohlsearch<cr>
 
-" Make Nerd Tree Easier to Toggle
-nmap <C-n> :NERDTreeToggle<cr>
-
 " Change working directory to current file
 nmap <Leader>lcd :lcd %:p:h<cr>:pwd<cr>
 nmap <Leader>cd :cd %:p:h<cr>:pwd<cr>
@@ -105,12 +102,6 @@ nmap <Leader>ft :set tabstop=4 noexpandtab <CR>
 
 
 "------------- Plugins --------------"
-"/
-"/ Nerdtree
-"/
-let g:NERDTreeHijackNetrw = 0                           " Keep NERDTree for when I need it, but use Netrw/vinegar by default
-
-
 "/
 "/ CtrlP
 "/
