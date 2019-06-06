@@ -1,1 +1,3 @@
-/Users/joshuatgarcia/dotfiles/vscode/settings.json
+{
+    "editor.tabSize": 2
+}
