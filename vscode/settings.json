@@ -1,3 +1,17 @@
 {
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+    "editor.wordWrap": "wordWrapColumn",
+    "files.exclude": {
+        "*.swo": true,
+        "*.swp": true
+    },
+    "workbench.colorTheme": "Solarized Light",
+    "vim.hlsearch": true,
+    "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
+    "php-cs-fixer.lastDownload": 1560196633159,
+    "git.autofetch": true,
+    "editor.fontSize": 15,
+    "terminal.integrated.fontFamily": "Inconsolata-dz for Powerline",
+    "terminal.external.osxExec": "iTerm.app",
+    "terminal.integrated.fontSize": 15
 }
