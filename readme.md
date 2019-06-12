@@ -40,3 +40,5 @@ source ~/.vimrc
 * Figure out a workaround for `oh-my-zsh/custom` dir
 * Run `brew install trash` on setup as well
 * Install Vundle
+* Commit my VSCode settings file as well
+* Install Powerline fonts
