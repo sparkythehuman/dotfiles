@@ -7,11 +7,18 @@
     },
     "workbench.colorTheme": "Solarized Light",
     "vim.hlsearch": true,
-    "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
-    "php-cs-fixer.lastDownload": 1560196633159,
+    "phpcs.standard": "WordPress-Extra",
+    "phpcbf.onsave": false,
     "git.autofetch": true,
     "editor.fontSize": 15,
     "terminal.integrated.fontFamily": "Inconsolata-dz for Powerline",
     "terminal.external.osxExec": "iTerm.app",
-    "terminal.integrated.fontSize": 15
+    "terminal.integrated.fontSize": 15,
+    "editor.wordWrapColumn": 120,
+    "editor.quickSuggestions": { "comments": true },
+    "window.zoomLevel": 0,
+    "php.suggest.basic": false,
+    "[php]": {
+        "editor.defaultFormatter": "persoderlind.vscode-phpcbf"
+    }
 }
