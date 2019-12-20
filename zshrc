@@ -2,45 +2,27 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/joshuatgarcia/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# ZSH_THEME="honukai"
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # zsh-syntax-highlighting must be the last plugin sourced
-plugins=(git npm brew osx extract z zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(brew git extract npm osx vi-mode z zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
-
-# Powerline configuration
-POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
-POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=''
-#POWERLEVEL9K_MULTILINE_SECOND_PROMPT_PREFIX="%K{white}%F{black} `date +%T` %f%k%F{white}%f "
-POWERLEVEL9K_MULTILINE_SECOND_PROMPT_PREFIX="$ "
-POWERLEVEL9K_VIRTUALENV_BACKGROUND='165'
-POWERLEVEL9K_NODE_VERSION_BACKGROUND='022'
-POWERLEVEL9K_PUBLIC_IP_BACKGROUND='018'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir rbenv virtualenv vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs public_ip time)
-
-## an idea for a powerline plugin
-# vagrant status | grep running | awk 'NR==1{print $1, $2}'
-# https://github.com/bhilburn/powerlevel9k#custom_command
 
 # Change autosuggest color cause it wasn't showing up well in solarized dark
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=244'
@@ -74,14 +56,34 @@ alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall F
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-## Include composer
-export PATH="$PATH:$HOME/.composer/vendor/bin"
-
 ## Autoload all the keys in the keychain
 ssh-add -K &> /dev/null
 
+## Composer path
+export PATH="$PATH:$HOME/.composer/vendor/bin"
+
 ## Homebrew path
 export PATH="/usr/local/sbin:$PATH"
+
+## Python path
+export PATH="$HOME/Library/Python/3.7/bin/:$PATH"
+
+
+# iterm2 shell integration
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# iterm2 status bar customizations
+PUBLIC_IP=$(curl ifconfig.me 2> /dev/null)
+iterm2_print_user_vars() {
+  iterm2_set_user_var public_ip $PUBLIC_IP
+}
+
+# Beginning search with arrow keys in vim mode
+bindkey "^[OA" up-line-or-beginning-search
+bindkey "^[OB" down-line-or-beginning-search
+bindkey -M vicmd "k" up-line-or-beginning-search
+bindkey -M vicmd "j" down-line-or-beginning-search
+
 
 ##
 # TIPS & TRICKS
