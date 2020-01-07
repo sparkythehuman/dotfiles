@@ -32,7 +32,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=244'
 
 # By default the promt will show "user@hostname"
 # Set DEFAULT_USER to regular username to hide the "user@hostname"
-DEFAULT_USER="joshuatgarcia"
+DEFAULT_USER="joshuagarcia"
 
 # Preferred editor for local and remote sessions
  if [[ -n $SSH_CONNECTION ]]; then
