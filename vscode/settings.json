@@ -19,6 +19,7 @@
     "window.zoomLevel": 0,
     "php.suggest.basic": false,
     "[php]": {
-        "editor.defaultFormatter": "persoderlind.vscode-phpcbf"
-    }
+        "editor.defaultFormatter": "valeryanm.vscode-phpsab"
+    },
+    "workbench.editor.enablePreviewFromQuickOpen": false
 }
