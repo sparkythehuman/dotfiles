@@ -63,7 +63,7 @@ alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall F
 ssh-add -K &> /dev/null
 
 ## Composer path
-export PATH="$PATH:$HOME/.composer/vendor/bin"
+export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 ## Homebrew path
 export PATH="/usr/local/sbin:$PATH"
@@ -71,6 +71,11 @@ export PATH="/usr/local/sbin:$PATH"
 ## Python path
 export PATH="$HOME/Library/Python/3.7/bin/:$PATH"
 
+## Node.JS path
+export PATH="/usr/local/Cellar/node/13.5.0/bin:$PATH"
+
+## pyenv path
+export PATH="$HOME/.pyenv/bin:$PATH"
 
 # iterm2 shell integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
