@@ -74,8 +74,13 @@ export PATH="$HOME/Library/Python/3.7/bin/:$PATH"
 ## Node.JS path
 export PATH="/usr/local/Cellar/node/13.5.0/bin:$PATH"
 
-## pyenv path
-export PATH="$HOME/.pyenv/bin:$PATH"
+## pyenv and pipenv paths
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+export PIPENV_PYTHON="$PYENV_ROOT/shims/python"
+
+# autolad pyenv
+eval "$(pyenv init -)"
 
 # iterm2 shell integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
