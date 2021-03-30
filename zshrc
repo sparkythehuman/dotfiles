@@ -34,12 +34,8 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=244'
 # Set DEFAULT_USER to regular username to hide the "user@hostname"
 DEFAULT_USER="joshuagarcia"
 
-# Preferred editor for local and remote sessions
- if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='vim'
- else
-   export EDITOR='mvim'
- fi
+# Preferred editor
+ export EDITOR='vim'
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -66,6 +62,7 @@ ssh-add -K &> /dev/null
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 ## Homebrew path
+export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 
 ## Python path
@@ -81,6 +78,10 @@ export PIPENV_PYTHON="$PYENV_ROOT/shims/python"
 
 # autolad pyenv
 eval "$(pyenv init -)"
+
+# Java path
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
+export JAVA_HOME=$(/usr/libexec/java_home)
 
 # iterm2 shell integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
