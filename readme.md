@@ -33,7 +33,6 @@ cd ~/dotfiles
 chmod +x setup.sh
 ./setup.sh
 source ~/.zshrc
-source ~/.vimrc
 ```
 
 ## Notes
@@ -44,8 +43,4 @@ ln -s ~/dotfiles/vscode/keybindings.json ~/Library/Application\ Support/Code/Use
 ```
 
 ## TODO
-* Figure out a workaround for `oh-my-zsh/custom` dir
-* Run `brew install trash` on setup as well
-* Install Vundle
-* Commit my VSCode settings file as well
-* Install Powerline fonts
+* Install Homebrew and run `brew install trash` on setup as well

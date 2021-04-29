@@ -8,7 +8,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc vimrc vim zshrc oh-my-zsh"    # list of files/folders to symlink in homedir
+files="bashrc zshrc oh-my-zsh"    # list of files/folders to symlink in homedir
 
 ##########
 
@@ -77,8 +77,3 @@ install_zsh
 echo -n "Creating symlink links for vscode settings."
 ln -s ~/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
 ln -s ~/dotfiles/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
-
-# Install fonts
-git clone https://github.com/powerline/fonts.git --depth=1 ~/powerline-fonts
-~/powerline-fonts/install.sh
-rm -rf ~/powerline-fonts
