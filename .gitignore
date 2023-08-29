@@ -3,3 +3,4 @@
 oh-my-zsh/
 vim/.netrwhist
 vim/bundle
+zsh_custom/env.zsh

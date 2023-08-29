@@ -43,4 +43,4 @@ ln -s ~/dotfiles/vscode/keybindings.json ~/Library/Application\ Support/Code/Use
 ```
 
 ## TODO
-* Install Homebrew and run `brew install trash` on setup as well
+* Install Homebrew?
