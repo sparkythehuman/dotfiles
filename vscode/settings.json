@@ -11,7 +11,6 @@
 			"*.swo": true,
 			"*.swp": true
 	},
-	"workbench.colorTheme": "Atom One Light",
 	"vim.hlsearch": true,
 	"git.autofetch": true,
 	"editor.fontSize": 15,
@@ -32,8 +31,13 @@
 	},
 	"[python]": {
 		"editor.insertSpaces": true,
-		"editor.tabSize": 4
+		"editor.tabSize": 4,
+		"editor.formatOnType": true
 	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
 	"workbench.editor.enablePreviewFromQuickOpen": false,
 	"sqltools.useNodeRuntime": true,
 	"[yaml]": {
@@ -44,28 +48,39 @@
 				"comments": false,
 				"strings": true
 		},
-		"editor.autoIndent": true,
+		"editor.autoIndent": "full",
 		"editor.renderWhitespace": "all",
 	},
 	"yaml.format.enable": true,
 	"yaml.trace.server": "verbose",
 	"yaml.customTags": [
-			"!And",
-			"!If",
-			"!Not",
-			"!Equals sequence",
-			"!Or",
-			"!FindInMap",
-			"!Base64",
-			"!Cidr",
-			"!Ref",
-			"!Sub",
-			"!GetAtt",
-			"!GetAZs",
-			"!ImportValue",
-			"!Select",
-			"!Split",
-			"!Join"
+		"!And",
+		"!If",
+		"!Not",
+		"!Equals sequence",
+		"!Or",
+		"!FindInMap",
+		"!Base64",
+		"!Cidr",
+		"!Ref",
+		"!Sub",
+		"!GetAtt",
+		"!GetAZs",
+		"!ImportValue",
+		"!Select",
+		"!Split",
+		"!Join",
+		"!And sequence",
+		"!If sequence",
+		"!Not sequence",
+		"!Equals",
+		"!Or sequence",
+		"!FindInMap sequence",
+		"!Join sequence",
+		"!Sub sequence",
+		"!ImportValue sequence",
+		"!Select sequence",
+		"!Split sequence"
 	],
 	"json.schemas": [
 			{
@@ -81,11 +96,23 @@
 	"editor.renderControlCharacters": false,
 	"editor.renderWhitespace": "none",
 	"kite.showWelcomeNotificationOnStartup": false,
-	"workbench.editorAssociations": [
-		{
-			"viewType": "jupyter.notebook.ipynb",
-			"filenamePattern": "*.ipynb"
-		}
+	"workbench.editorAssociations": {
+		"*.ipynb": "jupyter-notebook"
+	},
+	"kite.codefinder.enableLineDecoration": false,
+	"workbench.colorTheme": "Solarized Light",
+	"cSpell.enabled": true,
+	"cSpell.enableFiletypes": [
+		"shellscript"
 	],
-	"kite.codefinder.enableLineDecoration": false
+	"terminal.integrated.detectLocale": "off",
+	"remote.SSH.maxReconnectionAttempts": 2,
+	"sync-rsync.onSave": true,
+	"sync-rsync.exclude": [
+		".git",
+		".vscode",
+		".env",
+		"venv/"
+	],
+	"gitlens.autolinks": []
 }
