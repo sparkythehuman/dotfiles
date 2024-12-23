@@ -20,7 +20,7 @@ ZSH_CUSTOM=$HOME/dotfiles/zsh_custom
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # zsh-syntax-highlighting must be the last plugin sourced
-plugins=(brew git extract npm macos vi-mode z zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(brew git extract kube-ps1 npm macos vi-mode z zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -46,6 +46,8 @@ bindkey "^[OA" up-line-or-beginning-search
 bindkey "^[OB" down-line-or-beginning-search
 bindkey -M vicmd "k" up-line-or-beginning-search
 bindkey -M vicmd "j" down-line-or-beginning-search
+bindkey "^E" forward-word # command + ->
+bindkey "^A" backward-word # command + <-
 
 
 ##
