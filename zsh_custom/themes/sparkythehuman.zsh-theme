@@ -30,10 +30,12 @@ KUBE_PS1_SEPARATOR=""
 PROMPT+='${vcs_info_msg_0_} '
 
 # add kube context to prompt
-PROMPT+='%{$fg_bold[blue]%}$(kube_ps1)%f '
+if [ -n "$(kube_ps1)" ]; then
+  PROMPT+='%{$fg[blue]%}$(kube_ps1)%f '
+fi
 
 # lead user input
-PROMPT+='%f$ '
+PROMPT+='$ '
 
 # date in yyyy-mm-dd 00:00:00 format
-RPROMPT="[%D{%Y-%m-%f} %*%f]"
+RPROMPT="[%D{%Y-%m-%f} %*]"

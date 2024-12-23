@@ -5708,6 +5708,8 @@
 	</dict>
 	<key>Default Bookmark Guid</key>
 	<string>066C4FDF-473E-4DCF-8AD6-1B78554EE0BB</string>
+	<key>DisableTransparencyForKeyWindow</key>
+	<false/>
 	<key>GlobalKeyMap</key>
 	<dict>
 		<key>0x19-0x60000</key>
